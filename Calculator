@@ -1,0 +1,56 @@
+import 'dart:io';
+
+import 'class.dart';
+// هنا انا بطلب من اليوزر ادخال الرقم الاول
+// و بعد كدا نوع العملية الحسابية و بعدها الرقم التاني
+// و حيث انه بيختار انهي عملية حسابية بالظبط من جمع او طرح او ضرب او قسمة
+// حيث ان كل واحدة منهم معمول ليها فانكشن ييتم استدعئها علي حسب اختيار المستخدم
+void main() {
+  var calculate = Calculator();
+  print("please enter the first number?");
+  calculate.numberone = num.parse(stdin.readLineSync()!);
+  print('please choose the type of operation you want to use : + * -  /');
+  String?operations = stdin.readLineSync()!;
+  print("plese enter the second number?");
+  calculate.numbertwo = num.parse(stdin.readLineSync()!);
+  if (operations == "*") {
+    calculate.Mult();
+  }
+  if (operations == "+") {
+    calculate.add();
+  }
+  if (operations=="-") {
+    calculate.sub();
+  }
+  if (operations=="/") {
+    calculate.div();
+  }
+}
+
+--------------------------------------------------------------------------
+
+class Calculator {
+  num?numberone;
+  num?numbertwo;
+
+  void Mult() {
+    print(numberone! * numbertwo!);
+  }
+  void add() {
+    print(numberone! + numbertwo!);
+  }
+  void sub() {
+    print(numberone! - numbertwo!);
+  }
+  void div(){
+    print(numberone! / numbertwo!);
+  }
+}
+
+
+
+
+
+
+
+
