@@ -1,0 +1,44 @@
+import 'dart:ffi';
+import 'dart:io';
+
+import 'SignUp class.dart';
+// هنا انا بطلب من المستخدم انه يدخل البيانات الاتية بحيث انه ان كلها مطلوبة
+// all of the following entry required should be filled by the user
+void main() {
+  print("please enter your username ");
+  String Us=stdin.readLineSync()!;
+  print("please enter your password");
+  String pass=stdin.readLineSync()!;
+  print("Please enter your Email");
+  String Em=stdin.readLineSync()!;
+  print("please enter your Date of Birth D-M-Y");
+  String Birth=stdin.readLineSync()!;
+  print("please Enter your PhoneNumber");
+  num Number = num.parse(stdin.readLineSync()!);
+
+  // all of the following entry required should be filled by the user
+  var sign = Signup(Username:Us, password: pass, Email: Em, DateofBirth:Birth , PhoneNumber:Number );
+// and Here we call the function which print the information that the user fill in
+  sign.Registration();
+}
+-------------------------------------------------
+
+
+class Signup {
+  String?Username;
+  String?password;
+  num?PhoneNumber;
+  String?Email;
+  String?DateofBirth;
+
+  Signup( {required this.Username, required this.password, required this.Email, required this.DateofBirth, this.PhoneNumber =0});
+
+
+  void Registration() {
+    print("Username: $Username");
+    print("Password: $password");
+    print("PhoneNumber: $PhoneNumber");
+    print("Email: $Email");
+    print("DateofBirth: $DateofBirth");
+    }
+    }
