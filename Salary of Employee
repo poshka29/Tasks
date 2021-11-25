@@ -1,0 +1,31 @@
+import 'dart:io';
+
+import 'class.dart';
+
+void main() {
+
+  // هنا انا بخلي اليوزر يقولي يقدر يشتغل كام يوم في الشهر و كام ساعة في اليوم
+  // و بضربهم في بعض في ١٠٠ مثلا عشان احدد المرتب
+  var employeesalary = Salary();
+  print("please enter how many hours you can work per day ??");
+  employeesalary.hoursPerDay= num.parse(stdin.readLineSync()!);
+  print("how many day you can work per month??");
+  employeesalary.Days=num.parse(stdin.readLineSync()!);
+      employeesalary.salary();
+
+
+
+}
+
+----------------------------------------------------------
+class Salary {
+  num?WorkHours;
+  num?Days;
+  num?hoursPerDay;
+  num BasicSalary = 10;
+
+  void salary() {
+    print("Your Expected Salary with Egyptian Pound will be =");
+    print(Days!*hoursPerDay!*BasicSalary);
+  }
+}
