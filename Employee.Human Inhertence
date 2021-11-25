@@ -1,0 +1,64 @@
+import 'dart:io';
+
+import 'Employee class.dart';
+import 'Human Class.dart';
+
+void main() {
+  var Hum=Human();
+  print("what is your color ?");
+  Hum.Color=stdin.readLineSync()!;
+  print("please enter your Hair Color ?");
+  Hum.HairColor=stdin.readLineSync()!;
+  print("How tall you are in cm ?");
+  Hum.tall=num.parse(stdin.readLineSync()!);
+
+  var emp = Employ();
+  print("enter your first name?");
+  emp.Firstname=stdin.readLineSync()!;
+  print("Enter Your Last name? ");
+  emp.lastname=stdin.readLineSync()!;
+  print("please Enter Your Age ?");
+  emp.age=num.parse(stdin.readLineSync()!);
+  print("what is your Nationalty?");
+  emp.Nationalty=stdin.readLineSync()!;
+  print("How many Years of Experience you have ?");
+  emp.ExperienceYears=num.parse(stdin.readLineSync()!);
+
+  Hum.infHuman();
+  emp.infEmployee();
+
+}
+
+Employee class :
+
+import 'Human Class.dart';
+import 'untitled.dart';
+   class Employ extends  Human{
+  String?Firstname;
+  String?lastname;
+  String?Nationalty;
+  num?age;
+  num?ExperienceYears;
+
+  void infEmployee() {
+    print('firstname: $Firstname');
+    print('lastname: $lastname');
+    print('Nationalty $Nationalty');
+    print('Age: $age');
+    print('ExperienceYears: $ExperienceYears');
+  }
+}
+
+Human class :
+
+class Human {
+  String?Color;
+  String?HairColor;
+  num?tall;
+
+void infHuman(){
+  print("Color: $Color");
+  print("HairColor: $HairColor");
+  print("Tall in cm : $tall");
+}
+}
