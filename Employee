@@ -1,0 +1,51 @@
+import 'dart:io';
+import 'emp.dart';
+// دلوقتي هنا يستدعي الكلاس و بطلب من المستخدم الاتي من البيانات بتاعته
+void main() {
+  var entry = interview();
+  print('please enter your first name');
+  entry.Firstname = stdin.readLineSync()!;
+  print('please enter your last name');
+  entry.lastname = stdin.readLineSync()!;
+  print('please enter your Nationalty');
+  entry.Nationalty= stdin.readLineSync()!;
+  print('please enter your age');
+  entry.age = num.parse(stdin.readLineSync()!);
+  print('please enter your ExperienceYears');
+  entry.ExperienceYears = num.parse(stdin.readLineSync()!);
+  // و في الاخر هنا بستدعي الفانكشن بتاعتي و هي بتطبع البيانات اللي دخلها المستخدم
+  entry.information();
+}
+---------------------------------------------------------------
+class interview {
+  String?Firstname;
+  String?lastname;
+  String?Nationalty;
+  num?age;
+  num?ExperienceYears;
+
+  // انا هنا مدي امر ان كل المدخلات اللي قدامي تبقي
+  // Default
+  interview({this.Firstname="" , this.lastname="" , this.Nationalty="" ,  this.age=0 , this.ExperienceYears=0});
+
+  // هنا بطلب من الفانكشن انها تطبع البيانات اللي اليوزر هيدخلهم
+  //  مع اشتراط  لو خبرة اكتر من ٣ سنين يتطبع الرسالة الاتية و العكس
+  void information() {
+    print("first name is : $Firstname");
+    print("last name is : $lastname");
+    print("Age =  $age");
+    print("Years of Experience =  $ExperienceYears");
+    print("Nationalty: $Nationalty");
+
+    if (ExperienceYears! > 3) {
+      print('Congratulations !!! you are qualified for the job');
+    }
+
+    else if (ExperienceYears! < 3)
+      print('Sorry you are not qualified for the job');
+  }
+}
+
+
+
+
